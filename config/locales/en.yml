@@ -1,0 +1,5 @@
+en:
+  doorkeeper:
+    errors:
+      messages:
+        assertion_flow_not_configured: 'Resource Owner Assertion flow failed due to Doorkeeper.configure.resource_owner_from_assertion being unconfigured.'
