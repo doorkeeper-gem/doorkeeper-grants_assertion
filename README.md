@@ -3,7 +3,7 @@
 Assertion grant extension for Doorkeeper. Born from:
 https://github.com/doorkeeper-gem/doorkeeper/pull/249
 
-## Instalation
+## Installation
 
 1. Add both gems to your `Gemfile`.
 2. Add `assertion` as a `grant_flow` to your initializer.
@@ -22,6 +22,9 @@ Doorkeeper.configure do
     user_data = JSON.parse(response.body)
     User.find_by_facebook_id(user_data['id'])
   end
+  
+  # add your supported grant types and other extensions
+  grant_flows %w(assertion authorization_code implicit password client_credentials)
 end
 ```
 
