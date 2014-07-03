@@ -1,8 +1,8 @@
 require 'doorkeeper/request/assertion'
+require 'doorkeeper/grants_assertion/railtie'
 
-# Should belong to Helpers::Controller?
 module Doorkeeper
-  class ApplicationController < ActionController::Base
+  module GrantsAssertion    
     def resource_owner_from_assertion
       instance_eval(&Doorkeeper.configuration.resource_owner_from_assertion)
     end
