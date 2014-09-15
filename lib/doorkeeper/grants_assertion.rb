@@ -18,12 +18,14 @@ module Doorkeeper
 end
 
 module Doorkeeper
-def get_strategy(strategy, available)
+  class Request
+    def get_strategy(strategy, available)
       strategy = "assertion" if strategy == "urn:ietf:params:oauth:grant-type:jwt-bearer"
       fail Errors::MissingRequestStrategy unless strategy.present?
       fail NameError unless available.include?(strategy.to_s)
       "Doorkeeper::Request::#{strategy.to_s.camelize}".constantize
     end
+  end
 end
 
 module Doorkeeper
