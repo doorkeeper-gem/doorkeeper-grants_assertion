@@ -18,7 +18,7 @@ module Doorkeeper
 end
 
 module Doorkeeper
-  class Request
+  module Request
     def get_strategy(strategy, available)
       strategy = "assertion" if strategy == "urn:ietf:params:oauth:grant-type:jwt-bearer"
       fail Errors::MissingRequestStrategy unless strategy.present?
