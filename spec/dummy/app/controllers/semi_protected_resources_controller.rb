@@ -1,5 +1,5 @@
 class SemiProtectedResourcesController < ApplicationController
-  doorkeeper_for :index
+  before_action :doorkeeper_authorize!, only: [:index]
 
   def index
     render text: 'protected index'
