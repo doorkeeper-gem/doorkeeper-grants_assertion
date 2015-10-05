@@ -1,5 +1,7 @@
 # Doorkeeper - Assertion Grant Extension
 
+[![Travis CI](https://img.shields.io/travis/doorkeeper-gem/doorkeeper-grants_assertion/master.svg)](https://travis-ci.org/doorkeeper-gem/doorkeeper-grants_assertion)
+
 Assertion grant extension for Doorkeeper. Born from:
 https://github.com/doorkeeper-gem/doorkeeper/pull/249
 
