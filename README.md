@@ -42,4 +42,4 @@ Doorkeeper.configure do
 ```
 ___
 
-IETF standard: http://tools.ietf.org/html/draft-ietf-oauth-assertions-16
+IETF standard: http://tools.ietf.org/html/rfc7521
