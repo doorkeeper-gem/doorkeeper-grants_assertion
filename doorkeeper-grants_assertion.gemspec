@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'doorkeeper-grants_assertion'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.authors     = ['Tute Costa']
   s.email       = ['tutecosta@gmail.com']
   s.homepage    = "https://github.com/doorkeeper-gem/doorkeeper/doorkeeper-grants-assertion"
