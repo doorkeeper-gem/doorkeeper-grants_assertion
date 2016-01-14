@@ -4,7 +4,9 @@ module Doorkeeper
       attr_accessor :credentials, :resource_owner, :server
 
       def initialize(server)
-        @credentials, @resource_owner, @server = server.credentials, server.resource_owner_from_assertion, server
+        @credentials = server.credentials
+        @resource_owner = server.resource_owner_from_assertion
+        @server = server
       end
 
       def request
