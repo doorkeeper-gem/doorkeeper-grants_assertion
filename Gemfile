@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Define Rails version
 gem 'rails', ENV['rails']
 
-gem 'doorkeeper'
+gem 'doorkeeper', '>= 3.1.0'
 
 gem 'pry'
 gem 'sqlite3'

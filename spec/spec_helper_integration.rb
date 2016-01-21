@@ -4,7 +4,6 @@ $LOAD_PATH.unshift File.dirname(__FILE__)
 
 require 'dummy/config/environment'
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'database_cleaner'
 
 Rails.logger.info "====> Doorkeeper.orm = #{Doorkeeper.configuration.orm.inspect}"

@@ -1,15 +1,11 @@
 module Doorkeeper
   module Request
     class Assertion
-      def self.build(server)
-        new(server.credentials, server.resource_owner_from_assertion, server)
-      end
-
       attr_accessor :credentials, :resource_owner, :server
 
-      def initialize(credentials, resource_owner, server)
-        @credentials = credentials
-        @resource_owner = resource_owner
+      def initialize(server)
+        @credentials = server.credentials
+        @resource_owner = server.resource_owner_from_assertion
         @server = server
       end
 
