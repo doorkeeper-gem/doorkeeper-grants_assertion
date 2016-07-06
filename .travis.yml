@@ -1,6 +1,20 @@
 language: ruby
+
 rvm:
  - 2.0
- - 2.1
- - 2.2
+ - 2.1.10
+ - 2.2.5
+ - 2.3.1
+
+env:
+  - rails=4.2.6
+  - rails=5.0.0
+
+matrix:
+  exclude:
+    - env: rails=5.0.0
+      rvm: 2.0
+    - env: rails=5.0.0
+      rvm: 2.1.10
+
 script: bundle exec rake spec
