@@ -13,8 +13,8 @@ describe 'Resource Owner Assertion Flow inproperly set up', type: :request do
         post assertion_endpoint_url(client: @client, resource_owner: @resource_owner)
       }.to_not change { Doorkeeper::AccessToken.count }
 
-      should_have_json 'error', 'invalid_resource_owner'
-      should_have_json 'error_description', translated_error_message(:invalid_resource_owner)
+      should_have_json 'error', 'invalid_grant'
+      should_have_json 'error_description', translated_error_message(:invalid_grant)
       expect(response.status).to eq(401)
     end
   end
@@ -108,8 +108,8 @@ describe 'Resource Owner Assertion Flow', type: :request do
         post assertion_endpoint_url( client: @client, assertion: 'i_dont_exist' )
       }.to_not change { Doorkeeper::AccessToken.count }
 
-      should_have_json 'error', 'invalid_resource_owner'
-      should_have_json 'error_description', translated_error_message(:invalid_resource_owner)
+      should_have_json 'error', 'invalid_grant'
+      should_have_json 'error_description', translated_error_message(:invalid_grant)
       expect(response.status).to eq(401)
     end
 
@@ -118,8 +118,8 @@ describe 'Resource Owner Assertion Flow', type: :request do
         post assertion_endpoint_url( client: @client )
       }.to_not change { Doorkeeper::AccessToken.count }
 
-      should_have_json 'error', 'invalid_resource_owner'
-      should_have_json 'error_description', translated_error_message(:invalid_resource_owner)
+      should_have_json 'error', 'invalid_grant'
+      should_have_json 'error_description', translated_error_message(:invalid_grant)
       expect(response.status).to eq(401)
     end
 
