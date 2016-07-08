@@ -1,10 +1,11 @@
 module Doorkeeper
   module Request
     class Assertion
-      attr_accessor :credentials, :resource_owner, :server
+      attr_accessor :resource_owner, :server
+
+      delegate :credentials, :parameters, to: :server
 
       def initialize(server)
-        @credentials = server.credentials
         @resource_owner = server.resource_owner_from_assertion
         @server = server
       end
@@ -12,13 +13,24 @@ module Doorkeeper
       def request
         @request ||= OAuth::PasswordAccessTokenRequest.new(
           Doorkeeper.configuration,
-          credentials,
+          client,
           resource_owner,
-          server.parameters)
+          parameters
+        )
       end
 
       def authorize
         request.authorize
+      end
+
+      private
+
+      def client
+        if credentials
+          server.client
+        elsif parameters[:client_id]
+          server.client_via_uid
+        end
       end
     end
   end
