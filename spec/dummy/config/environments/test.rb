@@ -7,9 +7,11 @@ Dummy::Application.configure do
   # and recreated between test runs.  Don't rely on the data there!
   config.cache_classes = true
 
-  # Configure static asset server for tests with Cache-Control for performance
-  config.serve_static_files = true
-  config.static_cache_control = 'public, max-age=3600'
+  if Rails.version.to_i < 5
+    # Configure static asset server for tests with Cache-Control for performance
+    config.serve_static_files = true
+    config.static_cache_control = 'public, max-age=3600'
+  end
 
   if Rails.version.to_i < 4
     # Log error messages when you accidentally call methods on nil
