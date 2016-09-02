@@ -40,6 +40,7 @@ Doorkeeper.configure do
     params[:assertion])
     ....continue with authentication lookup....
 ```
+More complete examples, also for other providers may be found in the [wiki](https://github.com/doorkeeper-gem/doorkeeper-grants_assertion/wiki).
 ___
 
 IETF standard: http://tools.ietf.org/html/rfc7521
