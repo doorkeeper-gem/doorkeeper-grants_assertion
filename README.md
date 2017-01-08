@@ -7,7 +7,10 @@ https://github.com/doorkeeper-gem/doorkeeper/pull/249
 
 ## Installation
 
-1. Add both gems to your `Gemfile`.
+1. Add both gems to your `Gemfile`.    
+gem 'doorkeeper'    
+gem 'doorkeeper-grants_assertion' , git: 'https://github.com/doorkeeper-gem/doorkeeper-grants_assertion.git'
+
 2. Add `assertion` as a `grant_flow` to your initializer.
 
 ___
