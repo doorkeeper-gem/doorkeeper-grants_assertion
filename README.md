@@ -44,3 +44,7 @@ More complete examples, also for other providers may be found in the [wiki](http
 ___
 
 IETF standard: http://tools.ietf.org/html/rfc7521
+
+## Supported versions
+
+Assertion grant extension for Doorkeeper is tested with Rails 4.2 and 5.0.
