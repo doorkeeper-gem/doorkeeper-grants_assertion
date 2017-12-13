@@ -78,7 +78,7 @@ GIT
 PATH
   remote: ..
   specs:
-    doorkeeper-grants_assertion (0.0.1)
+    doorkeeper-grants_assertion (0.1.0)
       doorkeeper (>= 4.0)
       railties (>= 3.1)
 
@@ -194,4 +194,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
