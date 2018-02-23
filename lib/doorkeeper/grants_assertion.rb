@@ -1,5 +1,7 @@
 require "doorkeeper/request/assertion"
 require "doorkeeper/grants_assertion/railtie"
+require "doorkeeper/grants_assertion/omniauth"
+require "doorkeeper/grants_assertion/devise/omniauth"
 
 module Doorkeeper
   module GrantsAssertion
