@@ -13,13 +13,15 @@ module Doorkeeper
           #     provider: params.fetch(:provider),
           #     assertion: params.fetch(:assertion)
           #   )
-          #   User.find_by(facebook_id: auth['id'])
+          #   unless auth.nil?
+          #     User.find_by(facebook_id: auth['id'])
+          #   end
           # end
           def auth_hash(provider:, assertion:)
             devise_config = ::Devise.omniauth_configs[provider.to_sym]
             fail("Invalid Assertion Provider") if devise_config.nil?
             oauth2_wrapper(devise_config, assertion).auth_hash
-          rescue OAuth2::Error => exception
+          rescue OAuth2::Error => _exception
             nil
           end
 

@@ -14,8 +14,10 @@ module Doorkeeper
         #     client_secret: ENV["GOOGLE_CLIENT_SECRET"],
         #     client_options: { skip_image_info: false },
         #     assertion: params.fetch(:assertion)
-        #   ).auth_hash
-        #   User.find_by_facebook_id(auth['id'])
+        #   ).auth_hash rescue nil
+        #   unless auth.nil?
+        #     User.find_by(google_id: auth['id'])
+        #   end
         # end
         def oauth2_wrapper(
           strategy_class:,
