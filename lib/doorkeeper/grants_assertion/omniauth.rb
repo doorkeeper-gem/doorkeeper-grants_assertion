@@ -31,7 +31,7 @@ module Doorkeeper
           args = [client_id, client_secret, client_options]
           wrapper = wrapper_klass(strategy_class).new(app, *args)
           wrapper.access_token = OAuth2::AccessToken.new(
-            client,
+            wrapper.client,
             assertion,
             expires_at: expires_at,
             expires_in: expires_in,

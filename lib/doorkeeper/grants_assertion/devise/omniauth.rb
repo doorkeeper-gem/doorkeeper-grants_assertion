@@ -16,9 +16,11 @@ module Doorkeeper
           #   User.find_by(facebook_id: auth['id'])
           # end
           def auth_hash(provider:, assertion:)
-            devise_config = Devise.omniauth_configs[provider.to_sym]
+            devise_config = ::Devise.omniauth_configs[provider.to_sym]
             fail("Invalid Assertion Provider") if devise_config.nil?
             oauth2_wrapper(devise_config, assertion).auth_hash
+          rescue OAuth2::Error => exception
+            nil
           end
 
           private
