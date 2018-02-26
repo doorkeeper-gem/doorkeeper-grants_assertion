@@ -29,9 +29,9 @@ module Doorkeeper
           expires_in: nil,
           refresh_token: nil
         )
-          app = nil
+          app = nil # strategy_class is a rack middleware
           args = [client_id, client_secret, client_options]
-          wrapper = wrapper_klass(strategy_class).new(app, *args)
+          wrapper = Class.new(strategy_class).new(app, *args)
           wrapper.access_token = OAuth2::AccessToken.new(
             wrapper.client,
             assertion,
@@ -40,14 +40,6 @@ module Doorkeeper
             refresh_token: refresh_token
           )
           wrapper
-        end
-
-        private
-
-        def wrapper_klass(strategy_class)
-          Class.new(strategy_class) do
-            attr_reader :access_token
-          end
         end
       end
     end
