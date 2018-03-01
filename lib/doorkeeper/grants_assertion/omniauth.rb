@@ -31,7 +31,7 @@ module Doorkeeper
         )
           app = nil # strategy_class is a rack middleware
           default_options = {
-            name: strategy_class.to_s.split('::').last.downcase
+            name: strategy_class.to_s.split("::").last.downcase
           }
           options = default_options.merge(client_options)
           args = [client_id, client_secret, options]
