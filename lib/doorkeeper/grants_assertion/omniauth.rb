@@ -4,22 +4,8 @@ module Doorkeeper
   module GrantsAssertion
     module OmniAuth
       class << self
-        # Reuses OmniAuth strategy implementation, such as facebook or google.
-        # This allows you to share find/create methods with devise.
-        # Usage:
-        # resource_owner_from_assertion do
-        #   auth = Doorkeeper::GrantsAssertion::OmniAuth.oauth2_wrapper(
-        #     strategy_class: OmniAuth::Strategies:::GoogleOauth2,
-        #     client_id: ENV["GOOGLE_CLIENT_ID"],
-        #     client_secret: ENV["GOOGLE_CLIENT_SECRET"],
-        #     client_options: { skip_image_info: false },
-        #     assertion: params.fetch(:assertion)
-        #   ).auth_hash rescue nil
-        #   unless auth.nil?
-        #     User.find_by(google_id: auth['id'])
-        #   end
-        # end
         def oauth2_wrapper(
+          provider:,
           strategy_class:,
           client_id:,
           client_secret:,
@@ -30,9 +16,7 @@ module Doorkeeper
           refresh_token: nil
         )
           app = nil # strategy_class is a rack middleware
-          default_options = {
-            name: strategy_class.to_s.split("::").last.downcase
-          }
+          default_options = { name: provider }
           options = default_options.merge(client_options)
           args = [client_id, client_secret, options]
           wrapper = Class.new(strategy_class).new(app, *args)

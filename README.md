@@ -28,7 +28,7 @@ Doorkeeper.configure do
       assertion: params.fetch(:assertion)
     )
     unless auth.nil?
-      case provider
+      case params.fetch(:provider)
       when "facebook"
         User.find_by(facebook_id: auth['id'])
       when "google"
@@ -49,15 +49,20 @@ This allows you to use the auth_hash, which will return a OmniAuth AuthHash
 ```ruby
 Doorkeeper.configure do
   resource_owner_from_assertion do
-    auth = Doorkeeper::GrantsAssertion::OmniAuth.oauth2_wrapper(
-      strategy_class: OmniAuth::Strategies:::GoogleOauth2,
-      client_id: ENV["GOOGLE_CLIENT_ID"],
-      client_secret: ENV["GOOGLE_CLIENT_SECRET"],
-      client_options: { skip_image_info: false },
-      assertion: params.fetch(:assertion)
-    ).auth_hash rescue nil
-    unless auth.nil?
-      User.find_by(google_id: auth['id'])
+    case params.fetch(:provider)
+    when "google"
+      auth = Doorkeeper::GrantsAssertion::OmniAuth.oauth2_wrapper(
+        provider: "google",
+        strategy_class: OmniAuth::Strategies:::GoogleOauth2,
+        client_id: ENV["GOOGLE_CLIENT_ID"],
+        client_secret: ENV["GOOGLE_CLIENT_SECRET"],
+        client_options: { skip_image_info: false },
+        assertion: params.fetch(:assertion)
+      ).auth_hash rescue nil
+      unless auth.nil?
+        # your custom finders - just like in devise omniauth
+        User.find_by(google_id: auth['id'])
+      end
     end
   end
   # add your supported grant types and other extensions
