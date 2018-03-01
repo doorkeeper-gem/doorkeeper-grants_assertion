@@ -30,9 +30,10 @@ module Doorkeeper
           refresh_token: nil
         )
           app = nil # strategy_class is a rack middleware
-          options = client_options.merge(
+          default_options = {
             name: strategy_class.to_s.split('::').last.downcase
-          )
+          }
+          options = default_options.merge(client_options)
           args = [client_id, client_secret, options]
           wrapper = Class.new(strategy_class).new(app, *args)
           wrapper.access_token = OAuth2::AccessToken.new(
