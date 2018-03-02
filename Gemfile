@@ -10,4 +10,6 @@ gem 'sqlite3'
 gem 'factory_girl'
 gem 'appraisal'
 
+gem 'omniauth-oauth2'
+
 gemspec
