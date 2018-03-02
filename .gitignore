@@ -8,5 +8,5 @@ Gemfile.lock
 .rvmrc
 *.swp
 .idea
-vendor/bundle
+vendor/bundle/
 
