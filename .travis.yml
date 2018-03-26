@@ -1,10 +1,10 @@
 language: ruby
 
 rvm:
- - 2.1
  - 2.2.6
  - 2.3.3
  - 2.4
+ - 2.5
 
 gemfile:
   - gemfiles/rails_4_2.gemfile
@@ -12,10 +12,5 @@ gemfile:
   - gemfiles/rails_latest_and_doorkeeper_latest.gemfile
 
 matrix:
-  exclude:
-    - gemfile: gemfiles/rails_5_0.gemfile
-      rvm: 2.1
-    - gemfile: gemfiles/rails_latest_and_doorkeeper_latest.gemfile
-      rvm: 2.1
   allowed_failures:
     - gemfile: gemfiles/rails_latest_and_doorkeeper_latest.gemfile
