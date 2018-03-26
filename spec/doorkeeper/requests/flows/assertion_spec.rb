@@ -1,3 +1,5 @@
+# frozen_string_literal: true.
+
 require 'spec_helper_integration'
 
 describe 'Resource Owner Assertion Flow inproperly set up', type: :request do

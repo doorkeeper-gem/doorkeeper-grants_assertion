@@ -1,3 +1,5 @@
+# frozen_string_literal: true.
+
 require 'spec_helper'
 
 describe ::Doorkeeper::GrantsAssertion::OmniAuth do
@@ -31,16 +33,14 @@ describe ::Doorkeeper::GrantsAssertion::OmniAuth do
       subject { super().auth_hash }
       it {
         expect(subject).to eq(
-          {
-            "credentials" => {
-              "token" => "QWERTYUIOPASDFGHJKLZXCVBNM1234567890098765321",
-              "expires" => false,
-            },
-            "extra" => {},
-            "info" => {},
-            "provider" => "test-provider",
-            "uid" => nil,
-          }
+          "credentials" => {
+            "token" => "QWERTYUIOPASDFGHJKLZXCVBNM1234567890098765321",
+            "expires" => false,
+          },
+          "extra" => {},
+          "info" => {},
+          "provider" => "test-provider",
+          "uid" => nil,
         )
       }
     end
