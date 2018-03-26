@@ -1,8 +1,14 @@
-require "doorkeeper/request/assertion"
-require "doorkeeper/grants_assertion/railtie"
-require "doorkeeper/grants_assertion/omniauth"
-require "doorkeeper/grants_assertion/devise/omniauth"
+# frozen_string_literal: true
 
+require_relative "grants_assertion/railtie"
+require_relative "grants_assertion/omniauth"
+require_relative "grants_assertion/devise/omniauth"
+
+module Doorkeeper
+  module GrantsAssertion
+    require_relative "request/assertion"
+  end
+end
 module Doorkeeper
   module GrantsAssertion
     def resource_owner_from_assertion

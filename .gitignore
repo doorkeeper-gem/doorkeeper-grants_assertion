@@ -9,4 +9,5 @@ Gemfile.lock
 *.swp
 .idea
 vendor/bundle/
+gemfiles/vendor/bundle/
 

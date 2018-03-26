@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Doorkeeper
   module GrantsAssertion
     class Railtie < ::Rails::Railtie

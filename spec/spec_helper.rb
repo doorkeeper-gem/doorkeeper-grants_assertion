@@ -1,2 +1,6 @@
-$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../lib'))
-$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), '../app'))
+# frozen_string_literal: true
+
+require "rails"
+require "omniauth-oauth2"
+require "doorkeeper"
+require "doorkeeper/grants_assertion"
