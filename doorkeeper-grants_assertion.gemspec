@@ -33,4 +33,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry", ">= 0.11.3"
   s.add_development_dependency "appraisal", "~> 2.2.0"
   s.add_development_dependency "omniauth-oauth2", "~> 1.5.0"
+  s.add_development_dependency "omniauth-facebook", "~> 4.0.0"
+  s.add_development_dependency "omniauth-google-oauth2", "~> 0.5.3"
+  s.add_development_dependency "webmock", "~> 3.3.0"
 end
