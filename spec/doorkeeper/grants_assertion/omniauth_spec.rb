@@ -275,19 +275,20 @@ describe ::Doorkeeper::GrantsAssertion::OmniAuth do
         }
         before do
           stub_request(:get, "https://www.googleapis.com/plus/v1/people/me/openIdConnect").
-            with(headers: {
-             'Accept' => '*/*',
-             'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-             'Authorization' => 'Bearer invalid_token_1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-             'User-Agent' => /Faraday/
-            }
-          ).to_return(
-            status: 401,
-            body: '{ "error": { "errors": [{ "domain": "global", "reason": "authError", "message": "Invalid Credentials", "locationType": "header", "location": "Authorization" }], "code": 401, "message": "Invalid Credentials" } }',
-            headers: {
-              "Content-Type" => 'application/json'
-            }
-          )
+            with(
+              headers: {
+               'Accept' => '*/*',
+               'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+               'Authorization' => 'Bearer invalid_token_1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+               'User-Agent' => /Faraday/
+              }
+            ).to_return(
+              status: 401,
+              body: '{ "error": { "errors": [{ "domain": "global", "reason": "authError", "message": "Invalid Credentials", "locationType": "header", "location": "Authorization" }], "code": 401, "message": "Invalid Credentials" } }',
+              headers: {
+                "Content-Type" => 'application/json'
+              }
+            )
         end
 
         describe "#auth_hash" do
