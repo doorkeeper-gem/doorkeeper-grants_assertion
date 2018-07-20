@@ -18,6 +18,7 @@ GOOGLE_URL = "https://www.googleapis.com/plus/v1/people/me/openIdConnect"
 GOOGLE_VALID_TOKEN = "valid_token_1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 GOOGLE_INVALID_TOKEN = "invalid_token_1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+# rubocop:disable Metrics/BlockLength
 RSpec.configure do |config|
   config.before(:each) do
     stub_request(:get, GOOGLE_URL).
@@ -158,3 +159,4 @@ RSpec.configure do |config|
     )
   end
 end
+# rubocop:enable Metrics/BlockLength
