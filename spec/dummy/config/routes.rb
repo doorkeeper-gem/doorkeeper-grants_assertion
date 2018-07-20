@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   use_doorkeeper
-  use_doorkeeper
-  use_doorkeeper scope: 'scope'
 
   scope 'inner_space' do
     use_doorkeeper scope: 'scope' do

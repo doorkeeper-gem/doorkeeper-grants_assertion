@@ -4,7 +4,12 @@ module ModelHelper
   end
 
   def create_resource_owner
-    @resource_owner = User.create!(name: 'Joe', password: 'sekret', assertion: 'assertion')
+    @resource_owner = User.create!(
+      name: "Joe",
+      password: "sekret",
+      assertion: "assertion",
+      email: "u123456789@mail.com"
+    )
   end
 
   def authorization_code_exists(options = {})
