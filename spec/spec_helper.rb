@@ -32,7 +32,7 @@ RSpec.configure do |config|
       ).to_return(
         status: 200,
         body: (
-          <<~HEREDOC
+          '''
             {
               "kind": "plus#personOpenIdConnect",
               "gender": "male",
@@ -46,7 +46,7 @@ RSpec.configure do |config|
               "email_verified": "true",
               "locale": "en-US"
             }
-          HEREDOC
+          '''
         ),
         headers: {
           "Content-Type" => "application/json"
@@ -64,7 +64,7 @@ RSpec.configure do |config|
       ).to_return(
         status: 401,
         body: (
-          <<~HEREDOC
+          '''
             {
               "error": {
                 "errors": [
@@ -80,7 +80,7 @@ RSpec.configure do |config|
                 "message": "Invalid Credentials"
               }
             }
-          HEREDOC
+          '''
         ),
         headers: {
           "Content-Type" => "application/json"
@@ -104,7 +104,7 @@ RSpec.configure do |config|
     ).to_return(
       status: 400,
       body: (
-        <<~HEREDOC
+        '''
           {
             "error":{
               "message":"Malformed access token #{FACEBOOK_INVALID_TOKEN}",
@@ -112,7 +112,7 @@ RSpec.configure do |config|
               "code":190,"fbtrace_id":"1A2B3C4D"
             }
           }
-        HEREDOC
+        '''
       ),
       headers: {
         "Content-Type" => "application/json"
@@ -135,7 +135,7 @@ RSpec.configure do |config|
     ).to_return(
       status: 200,
       body: (
-        <<~HEREDOC
+        '''
           {
             "email":"u123456789\u0040mail.com",
             "first_name":"Samuel",
@@ -151,7 +151,7 @@ RSpec.configure do |config|
             },
             "id":"102030405060708090"
           }
-        HEREDOC
+        '''
       ),
       headers: {
         "Content-Type" => "application/json"
