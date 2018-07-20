@@ -108,3 +108,12 @@ IETF standard: http://tools.ietf.org/html/rfc7521
 ## Supported versions
 
 Assertion grant extension for Doorkeeper is tested with Rails 4.2 and 5.0.
+
+## Contributing
+
+After adding the feature and funtionality, please run
+```
+ bundle exec appraisal install
+```
+
+This will update gems in for travis ci tests.
