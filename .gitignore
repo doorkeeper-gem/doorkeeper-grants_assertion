@@ -10,4 +10,4 @@ Gemfile.lock
 .idea
 vendor/bundle/
 gemfiles/vendor/bundle/
-
+.DS_Store
