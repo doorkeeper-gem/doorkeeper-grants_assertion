@@ -1,14 +1,19 @@
 module ModelHelper
   def client_exists(client_attributes = {})
-    @client = FactoryGirl.create(:application, client_attributes)
+    @client = FactoryBot.create(:application, client_attributes)
   end
 
   def create_resource_owner
-    @resource_owner = User.create!(name: 'Joe', password: 'sekret', assertion: 'assertion')
+    @resource_owner = User.create!(
+      name: "Joe",
+      password: "sekret",
+      assertion: "assertion",
+      email: "u123456789@mail.com"
+    )
   end
 
   def authorization_code_exists(options = {})
-    @authorization = FactoryGirl.create(:access_grant, options)
+    @authorization = FactoryBot.create(:access_grant, options)
   end
 
   def access_grant_should_exist_for(client, resource_owner)

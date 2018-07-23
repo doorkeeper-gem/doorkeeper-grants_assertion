@@ -8,3 +8,6 @@ Gemfile.lock
 .rvmrc
 *.swp
 .idea
+vendor/bundle/
+gemfiles/vendor/bundle/
+.DS_Store

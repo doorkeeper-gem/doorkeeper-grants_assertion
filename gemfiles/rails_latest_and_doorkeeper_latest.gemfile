@@ -4,10 +4,7 @@ source "https://rubygems.org"
 
 gem "rails", github: "rails/rails"
 gem "doorkeeper", github: "doorkeeper-gem/doorkeeper"
-gem "pry"
 gem "sqlite3"
-gem "factory_girl"
-gem "appraisal"
 gem "arel", github: "rails/arel"
 
 gemspec path: "../"
