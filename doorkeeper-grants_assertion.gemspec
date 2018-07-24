@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.version     = Doorkeeper::GrantsAssertion::VERSION
   s.authors     = ['Tute Costa']
   s.email       = ['tutecosta@gmail.com']
-  s.homepage    = "https://github.com/doorkeeper-gem/doorkeeper/doorkeeper-grants-assertion"
+  s.homepage    = "https://github.com/doorkeeper-gem/doorkeeper-grants-assertion"
   s.summary     = "Assertion grant extension for Doorkeeper."
   s.description = "Assertion grant extension for Doorkeeper."
   s.license     = 'MIT'
