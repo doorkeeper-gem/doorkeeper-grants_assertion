@@ -18,6 +18,8 @@ GOOGLE_URL = "https://www.googleapis.com/plus/v1/people/me/openIdConnect"
 GOOGLE_VALID_TOKEN = "valid_token_1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 GOOGLE_INVALID_TOKEN = "invalid_token_1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+puts "=====> Doorkeeper version: #{Doorkeeper::VERSION::STRING}"
+
 # rubocop:disable Metrics/BlockLength
 RSpec.configure do |config|
   config.before(:each) do

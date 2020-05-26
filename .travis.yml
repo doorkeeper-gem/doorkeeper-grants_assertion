@@ -1,16 +1,15 @@
 language: ruby
 
 rvm:
- - 2.2.6
- - 2.3.3
  - 2.4
  - 2.5
+ - 2.6
+ - 2.7
 
 gemfile:
-  - gemfiles/rails_4_2.gemfile
-  - gemfiles/rails_5_0.gemfile
+  - gemfiles/rails_5_2.gemfile
   - gemfiles/rails_latest_and_doorkeeper_latest.gemfile
 
 matrix:
-  allowed_failures:
+  allow_failures:
     - gemfile: gemfiles/rails_latest_and_doorkeeper_latest.gemfile

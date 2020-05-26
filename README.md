@@ -111,7 +111,7 @@ Assertion grant extension for Doorkeeper is tested with Rails 4.2 and 5.0.
 
 ## Contributing
 
-After adding the feature and funtionality, please run
+After adding the feature and functionality, please run
 ```
  bundle exec appraisal install
 ```

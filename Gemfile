@@ -2,9 +2,8 @@
 
 source "https://rubygems.org"
 
-# Define Rails version
-gem "doorkeeper", "~> 4.2.0"
-gem "rails", "~> 4.2.0"
+gem "doorkeeper", "~> 5.2"
+gem "rails", "~> 5.2"
 gem "sqlite3"
 
 gemspec
