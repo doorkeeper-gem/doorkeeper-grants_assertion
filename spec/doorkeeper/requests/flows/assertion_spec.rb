@@ -17,7 +17,7 @@ describe 'Resource Owner Assertion Flow inproperly set up', type: :request do
 
       should_have_json 'error', 'invalid_grant'
       should_have_json 'error_description', translated_error_message(:invalid_grant)
-      expect(response.status).to eq(401)
+      expect(response.status).to eq(400)
     end
   end
 end
@@ -115,7 +115,7 @@ describe 'Resource Owner Assertion Flow', type: :request do
 
       should_have_json 'error', 'invalid_grant'
       should_have_json 'error_description', translated_error_message(:invalid_grant)
-      expect(response.status).to eq(401)
+      expect(response.status).to eq(400)
     end
 
     it "should not issue new token without assertion" do
@@ -125,7 +125,7 @@ describe 'Resource Owner Assertion Flow', type: :request do
 
       should_have_json 'error', 'invalid_grant'
       should_have_json 'error_description', translated_error_message(:invalid_grant)
-      expect(response.status).to eq(401)
+      expect(response.status).to eq(400)
     end
 
   end
@@ -292,7 +292,7 @@ describe 'Resource Owner Assertion Flow with Devise OmniAuth', type: :request do
 
       should_have_json 'error', 'invalid_grant'
       should_have_json 'error_description', translated_error_message(:invalid_grant)
-      expect(response.status).to eq(401)
+      expect(response.status).to eq(400)
     end
 
     it "should not issue new token with bad google assertion" do
@@ -306,7 +306,7 @@ describe 'Resource Owner Assertion Flow with Devise OmniAuth', type: :request do
 
       should_have_json 'error', 'invalid_grant'
       should_have_json 'error_description', translated_error_message(:invalid_grant)
-      expect(response.status).to eq(401)
+      expect(response.status).to eq(400)
     end
 
     it "should not issue new token without assertion" do
@@ -316,7 +316,7 @@ describe 'Resource Owner Assertion Flow with Devise OmniAuth', type: :request do
 
       should_have_json 'error', 'invalid_grant'
       should_have_json 'error_description', translated_error_message(:invalid_grant)
-      expect(response.status).to eq(401)
+      expect(response.status).to eq(400)
     end
 
   end

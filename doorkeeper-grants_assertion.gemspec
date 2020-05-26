@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.test_files    = ` /*`.split("\n")
   s.require_paths = ["lib"]
 
-  s.add_dependency "railties", ">= 3.1"
+  s.add_dependency "railties", ">= 5.0"
   s.add_dependency "doorkeeper", ">= 4.0"
 
   s.add_development_dependency "rspec-rails", ">= 2.11.4"
@@ -37,5 +37,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "omniauth-google-oauth2", "~> 0.5.3"
   s.add_development_dependency "webmock", "~> 3.3.0"
   s.add_development_dependency "devise", "~> 4.4.3"
-
 end

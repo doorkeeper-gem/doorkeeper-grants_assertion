@@ -14,27 +14,29 @@
 ActiveRecord::Schema.define(version: 20180720202342) do
 
   create_table "oauth_access_grants", force: :cascade do |t|
-    t.integer  "resource_owner_id",              null: false
-    t.integer  "application_id",                 null: false
-    t.string   "token",                          null: false
-    t.integer  "expires_in",                     null: false
-    t.string   "redirect_uri",      limit: 2048, null: false
-    t.datetime "created_at",                     null: false
+    t.integer "resource_owner_id", null: false
+    t.integer "application_id", null: false
+    t.string "token", null: false
+    t.integer "expires_in", null: false
+    t.string "redirect_uri", limit: 2048, null: false
+    t.datetime "created_at", null: false
     t.datetime "revoked_at"
-    t.string   "scopes"
+    t.string "scopes"
   end
 
   add_index "oauth_access_grants", ["token"], name: "index_oauth_access_grants_on_token", unique: true
 
   create_table "oauth_access_tokens", force: :cascade do |t|
-    t.integer  "resource_owner_id"
-    t.integer  "application_id"
-    t.string   "token",             null: false
-    t.string   "refresh_token"
-    t.integer  "expires_in"
+    t.integer "resource_owner_id"
+    t.string "resource_owner_type"
+    t.integer "application_id"
+    t.string "token", null: false
+    t.string "refresh_token"
+    t.integer "expires_in"
     t.datetime "revoked_at"
-    t.datetime "created_at",        null: false
-    t.string   "scopes"
+    t.datetime "created_at", null: false
+    t.string "scopes"
+    t.string "previous_refresh_token", default: "", null: false
   end
 
   add_index "oauth_access_tokens", ["refresh_token"], name: "index_oauth_access_tokens_on_refresh_token", unique: true
@@ -42,26 +44,27 @@ ActiveRecord::Schema.define(version: 20180720202342) do
   add_index "oauth_access_tokens", ["token"], name: "index_oauth_access_tokens_on_token", unique: true
 
   create_table "oauth_applications", force: :cascade do |t|
-    t.string   "name",                      null: false
-    t.string   "uid",                       null: false
-    t.string   "secret",                    null: false
-    t.string   "redirect_uri", limit: 2048, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "owner_id"
-    t.string   "owner_type"
+    t.string "name", null: false
+    t.string "uid", null: false
+    t.string "secret", null: false
+    t.text "redirect_uri"
+    t.string "scopes", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "owner_id"
+    t.string "owner_type"
+    t.boolean "confidential", default: true, null: false
   end
 
   add_index "oauth_applications", ["owner_id", "owner_type"], name: "index_oauth_applications_on_owner_id_and_owner_type"
   add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "password"
-    t.string   "assertion"
+    t.string "name"
+    t.string "password"
+    t.string "assertion"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email"
+    t.string "email"
   end
-
 end

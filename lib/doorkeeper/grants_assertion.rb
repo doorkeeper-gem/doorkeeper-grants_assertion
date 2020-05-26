@@ -24,7 +24,7 @@ end
 
 module Doorkeeper
   class Config
-    option :resource_owner_from_assertion, default: (lambda do |routes|
+    option :resource_owner_from_assertion, default: (lambda do |_routes|
         warn(I18n.t("doorkeeper.errors.messages.assertion_flow_not_configured"))
         nil
       end)
