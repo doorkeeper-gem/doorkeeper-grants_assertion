@@ -36,5 +36,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "omniauth-facebook", "~> 4.0.0"
   s.add_development_dependency "omniauth-google-oauth2", "~> 0.5.3"
   s.add_development_dependency "webmock", "~> 3.3.0"
-  s.add_development_dependency "devise", "~> 4.4.3"
+  s.add_development_dependency "devise", ">= 4.4.3"
 end
