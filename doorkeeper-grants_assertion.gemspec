@@ -9,8 +9,8 @@ require "doorkeeper/grants_assertion/version"
 Gem::Specification.new do |s|
   s.name        = 'doorkeeper-grants_assertion'
   s.version     = Doorkeeper::GrantsAssertion::VERSION
-  s.authors     = ['Tute Costa']
-  s.email       = ['tutecosta@gmail.com']
+  s.authors     = ['Tute Costa', 'Nikita Bulai']
+  s.email       = ['tutecosta@gmail.com', 'bulajnikita@gmail.com']
   s.homepage    = "https://github.com/doorkeeper-gem/doorkeeper-grants-assertion"
   s.summary     = "Assertion grant extension for Doorkeeper."
   s.description = "Assertion grant extension for Doorkeeper."

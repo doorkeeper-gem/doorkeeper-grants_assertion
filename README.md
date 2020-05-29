@@ -1,6 +1,7 @@
 # Doorkeeper - Assertion Grant Extension
 
 [![Travis CI](https://img.shields.io/travis/doorkeeper-gem/doorkeeper-grants_assertion/master.svg)](https://travis-ci.org/doorkeeper-gem/doorkeeper-grants_assertion)
+[![Gem Version](https://badge.fury.io/rb/doorkeeper-grants_assertion.svg)](https://rubygems.org/gems/doorkeeper-grants_assertion)
 
 Assertion grant extension for Doorkeeper. Born from:
 https://github.com/doorkeeper-gem/doorkeeper/pull/249
@@ -96,9 +97,10 @@ If you want to ensure that resource owners can only receive access tokens scoped
 Doorkeeper.configure do
   resource_owner_from_assertion do
     Doorkeeper::Application.find_by!(uid: params[:client_id]) #will raise an exception if not found
-    facebook = URI.parse('https://graph.facebook.com/me?access_token=' +
-    params[:assertion])
-    ....continue with authentication lookup....
+    facebook = URI.parse('https://graph.facebook.com/me?access_token=' + params[:assertion])
+    # ....continue with authentication lookup....
+  end
+end
 ```
 More complete examples, also for other providers may be found in the [wiki](https://github.com/doorkeeper-gem/doorkeeper-grants_assertion/wiki).
 ___
@@ -107,7 +109,7 @@ IETF standard: http://tools.ietf.org/html/rfc7521
 
 ## Supported versions
 
-Assertion grant extension for Doorkeeper is tested with Rails 4.2 and 5.0.
+Assertion grant extension for Doorkeeper is tested with Rails 4.2, 5.x and 6.0.
 
 ## Contributing
 
