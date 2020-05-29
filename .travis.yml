@@ -8,8 +8,14 @@ rvm:
 
 gemfile:
   - gemfiles/rails_5_2.gemfile
+  - gemfiles/rails_6_0.gemfile
   - gemfiles/rails_latest_and_doorkeeper_latest.gemfile
 
 matrix:
-  allow_failures:
+ exclude:
+  - gemfile: gemfiles/rails_6_0.gemfile
+    rvm: 2.4
+  - gemfile: gemfiles/rails_latest_and_doorkeeper_latest.gemfile
+    rvm: 2.4
+ allow_failures:
     - gemfile: gemfiles/rails_latest_and_doorkeeper_latest.gemfile
