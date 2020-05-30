@@ -30,3 +30,12 @@ module Doorkeeper
       end)
   end
 end
+
+# For compatibility with Doorkeeper <= 5.5
+if defined?(::Doorkeeper::GrantFlow)
+  Doorkeeper::GrantFlow.register(
+    :assertion,
+    grant_type_matches: "assertion",
+    grant_type_strategy: Doorkeeper::Request::Assertion,
+  )
+end
