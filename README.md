@@ -53,7 +53,7 @@ Doorkeeper.configure do
       when "google"
         auth = Doorkeeper::GrantsAssertion::OmniAuth.oauth2_wrapper(
           provider: "google",
-          strategy_class: OmniAuth::Strategies:::GoogleOauth2,
+          strategy_class: OmniAuth::Strategies::GoogleOauth2,
           client_id: ENV["GOOGLE_CLIENT_ID"],
           client_secret: ENV["GOOGLE_CLIENT_SECRET"],
           client_options: { skip_image_info: false },
